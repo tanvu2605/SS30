@@ -1,11 +1,30 @@
-function isPalindromeArray(arr) {
-    for(let i = 0; i<arr.length / 2; i++) {
-        if (arr[i] != arr[arr.length -1 -i]){
-            return false;
-        }
+function isOdd(number) {
+    return number % 2 !== 0;
+  }
+  
+  function printOddNumbersSum(n) {
+    let sum = 0;
+  
+    for (let i = 1; i <= n; i++) {
+      if (isOdd(i)) {
+        console.log(i);
+        sum += i;
+      }
     }
-    return true;
-}
-const myArray = [1, 2, 3, 2, 1];
-const result = isPalindromeArray(myArray);
-console.log(result);
+  
+    if (!isOdd(sum)) {
+      console.log(1);
+      sum += 1;
+    }
+  
+    console.log(`Tổng các số: ${sum}`);
+  }
+  
+  const n = 10;
+  
+  if (isNaN(n) || n <= 0) {
+    console.log("Vui lòng nhập một số nguyên dương hợp lệ.");
+  } else {
+    console.log(`Các số nguyên dương lẻ nhất từ 0 đến ${n}:`);
+    printOddNumbersSum(n);
+  }
